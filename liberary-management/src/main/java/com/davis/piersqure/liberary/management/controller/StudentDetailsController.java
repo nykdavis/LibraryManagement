@@ -18,11 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.davis.piersqure.liberary.management.entity.StudentDetails;
 import com.davis.piersqure.liberary.management.repository.StudentDetailsRepository;
 
-import lombok.extern.slf4j.Slf4j;
-
 @RestController
 @RequestMapping("/students")
-@Slf4j
 public class StudentDetailsController {
 
 	@Autowired
