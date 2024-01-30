@@ -1,0 +1,24 @@
+CREATE TABLE student_details (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    address VARCHAR(50),
+    branch VARCHAR(20),
+    section VARCHAR(5) default 'A'
+);
+
+CREATE TABLE library_details (
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    book_title VARCHAR(100),
+    author_name VARCHAR(50)
+);
+
+CREATE TABLE borrow_books (
+    borrow_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    book_id INT,
+    borrow_date DATE,
+    due_date DATE,
+    FOREIGN KEY (student_id) REFERENCES student_details(student_id),
+    FOREIGN KEY (book_id) REFERENCES library_details(book_id)
+);
